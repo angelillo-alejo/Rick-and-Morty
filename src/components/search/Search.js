@@ -2,7 +2,7 @@ import React from "react";
 
 
 const Search = ({ setSearch }) => {
-  
+
   const searchBtn = (e) => {
     e.preventDefault();
   };
@@ -12,11 +12,11 @@ const Search = ({ setSearch }) => {
     >
       <input
         onChange={(e) => {
-          
+
           setSearch(e.target.value);
         }}
         placeholder="Search for characters"
-        className= ""
+        className= "form-control"
         type="text"
       />
       <button

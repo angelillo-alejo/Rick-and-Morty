@@ -4,7 +4,7 @@ import Search from "../components/search/Search";
 
 function NextPage({ page, setPage }) {
   return (
-    <div class="container">
+    <div className="container">
         <button type="button" disabled={page > page.length - 1}//Error
         className="btn btn-primary"
         onClick={() => setPage(page + 1)}
@@ -16,7 +16,7 @@ function NextPage({ page, setPage }) {
 }
 function BackPage({ page, setPage }) {
   return (
-    <div class="constainer">
+    <div className="constainer">
       <button type="button" disabled = {page <= 0}
       className="btn btn-primary" 
       onClick={() => setPage(page - 1) } 
@@ -37,7 +37,7 @@ export function CharacterList() {
   useEffect(() => {
     const getCharacter = async () => {
       const data = await fetch(
-        `https://rickandmortyapi.com/api/character?page=${page}&name=${Search}`
+        `https://rickandmortyapi.com/api/character?page=${page}&name=${Search}` //name como dice la documentacion
       );
       const { results } = await data.json();
       setCharacters(results);

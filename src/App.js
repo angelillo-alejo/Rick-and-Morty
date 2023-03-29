@@ -2,12 +2,12 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import CharacterList from './pages/CharacterList';
-import Search from './components/search/Search';
 import { useState } from 'react';
 
 
 function App() {
-  let [search, setSearch] = useState("")
+  
+  const [Search, setSearch] = useState("")
   
   return (
     <div className="App">

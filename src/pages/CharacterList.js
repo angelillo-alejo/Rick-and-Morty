@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import Characters from "./Characters";
+import Search from "../components/search/Search";
 
 function NextPage({ page, setPage }) {
   return (
     <div class="container">
-      <button type="button"
+        <button type="button" disabled={page > page.length - 1}//Error
         className="btn btn-primary"
         onClick={() => setPage(page + 1)}
       >
@@ -16,9 +17,9 @@ function NextPage({ page, setPage }) {
 function BackPage({ page, setPage }) {
   return (
     <div class="constainer">
-      <button type="button" 
+      <button type="button" disabled = {page <= 0}
       className="btn btn-primary" 
-      onClick={() => setPage(page - 1)}
+      onClick={() => setPage(page - 1) } 
       >
         Page {page - 1}
       </button>
@@ -31,11 +32,12 @@ export function CharacterList() {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
+  
 
   useEffect(() => {
     const getCharacter = async () => {
       const data = await fetch(
-        `https://rickandmortyapi.com/api/character?page=${page}`
+        `https://rickandmortyapi.com/api/character?page=${page}&name=${Search}`
       );
       const { results } = await data.json();
       setCharacters(results);

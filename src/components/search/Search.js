@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 
 const Search = ({ setSearch, updatePageNumber }) => {
     const search = (e) => {
@@ -28,3 +29,8 @@ const Search = ({ setSearch, updatePageNumber }) => {
     };
 
 export default Search;
+
+//1) Setear Hook useState
+//2) Metodo de filtrado
+//3) Funcion de busqueda
+//4) Renderizamos la busqueda

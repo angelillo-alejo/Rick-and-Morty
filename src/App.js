@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
     <NavBar></NavBar>
-    <Search/>
+    <Search setSearch={setSearch} />
     <CharacterList/>
     </div>
   );

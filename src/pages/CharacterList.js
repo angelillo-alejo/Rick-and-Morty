@@ -5,23 +5,23 @@ import Characters from "./Characters";
 function NextPage({ page, setPage }) {
   return (
     <div className="container">
-        <button type="button" disabled={page > page.length - 1}//Error
+        <button type="button" disabled={page ===40} 
         className="btn btn-primary"
         onClick={() => setPage(page + 1)}
       >
-        Page {page + 1}
+        Next
       </button>
     </div>
   ); 
 }
 function BackPage({ page, setPage }) {
   return (
-    <div class="constainer">
-      <button type="button" disabled = {page <= 0}
+    <div className="constainer">
+      <button type="button" disabled = {page === 0}
       className="btn btn-primary" 
       onClick={() => setPage(page - 1) } 
       >
-        Page {page - 1}
+        Back
       </button>
     </div>
 
@@ -32,6 +32,7 @@ export function CharacterList() {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
+  const [search, setSearch] = useState("")
   
 
   useEffect(() => {

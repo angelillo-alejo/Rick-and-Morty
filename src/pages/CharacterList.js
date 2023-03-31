@@ -5,7 +5,7 @@ import Characters from "./Characters";
 function NextPage({ page, setPage }) {
   return (
     <div className="container">
-        <button type="button" disabled={page ===40} 
+        <button type="button" disabled={page === 40} 
         className="btn btn-primary"
         onClick={() => setPage(page + 1)}
       >

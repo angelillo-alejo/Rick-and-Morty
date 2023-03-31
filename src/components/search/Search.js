@@ -5,16 +5,13 @@ const Search = ({ setSearch }) => {
   const searchBtn = (e) => {
     e.preventDefault();
     setSearch (e.target.value)
-    console.log(e)
+    console.log(setSearch)
   };
   return (
-    <div className="input-group mb-3 gap-4 mb-5">
-      <div className="input-group-prepend">
-        <button className="btn btn-outline-secondary" type="button" onClick = { searchBtn }>Button</button>
-      </div>
+      <form className="d-flex flex-sm-row flex-column align-items-center justify-content-center gap-4 mb-5">
+      <button className="btn btn-primary" type="button" onClick = { searchBtn }>Button</button>
       <input type="text" className="form-control" placeholder="Buscar" aria-label="" aria-describedby="basic-addon1" onChange = {(e) => { setSearch(e.target.value) }}/>
-    </div>
-
+      </form>
   )
 };
 
